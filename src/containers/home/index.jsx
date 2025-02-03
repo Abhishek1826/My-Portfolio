@@ -31,7 +31,7 @@ const Home = () => {
                 >
                     <div className="hire_contactme">
                         <button onClick={handleNavigateToContactPage}>Hire Me</button>
-                        <a href="/AbhishekResume.pdf" download="Abhishek-Shukla-Resume.pdf">
+                        <a href="/ABHISHEK_RESUME.pdf" download="ABHISHEK_RESUME.pdf">
                             <button>Download Resume</button>
                         </a>
                     </div>
