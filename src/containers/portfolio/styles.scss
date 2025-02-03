@@ -1,0 +1,207 @@
+.portfolio {
+    padding: 20px;
+}
+
+.portfolio__content {
+    padding: 20px;
+    width: 100%;
+}
+
+.portfolio__content__filter {
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 25px;
+    border: 1px dashed var(--yellow-theme-main-color);
+    justify-content: center;
+    text-align: center; /* Center the list items */
+}
+
+.portfolio__content__filter li {
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    color: var(--yellow-theme-main-color);
+    text-transform: uppercase;
+    padding: 8px 20px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.portfolio__content__filter li.active {
+    background: var(--yellow-theme-main-color);
+    color: var(--yellow-theme-sub-text-color);
+    font-weight: 600;
+    border-radius: 25px;
+}
+
+.portfolio__content__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 1rem;
+    margin-top: 10px;
+    /* Ensure grid items are aligned properly */
+}
+
+.portfolio__content__cards__items {
+    height: 366px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Ensure content stays within the card */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+}
+
+.portfolio__content__cards__image-wrapper {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.portfolio__content__cards__image-wrapper img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-color: var(--yellow-theme-main-color);
+}
+
+.overlay div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.typing-effect {
+    color: #000;
+    margin: 0;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typingEffect 1s steps(30, end) forwards;
+}
+
+.overlay div button {
+    cursor: pointer;
+    margin-top: 16px;
+    padding: 10px 70px;
+    background: transparent;
+    color: #000;
+    border: 1.5px solid #000;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.portfolio__content__cards__items:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio__content__cards__items:hover img {
+    transform: scale(1.05); /* Add zoom effect on hover */
+}
+
+@keyframes typingEffect {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .portfolio__content__filter li {
+        font-size: 14px;
+    }
+
+    .portfolio__content__cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    .portfolio__content__cards__items {
+        height: 300px; /* Adjust height on medium screens */
+    }
+
+    .typing-effect {
+        font-size: 1.5rem; /* Smaller font size for typing effect on medium screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .portfolio__content__filter li {
+        font-size: 11px;
+    }
+
+    .portfolio__content__cards {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+
+    .portfolio__content__cards__items {
+        height: 250px; /* Adjust height on small screens */
+    }
+
+    .typing-effect {
+        font-size: 1.2rem; /* Smaller font size for typing effect on small screens */
+    }
+
+    /* Additional styles to ensure hover-like behavior on mobile */
+    .portfolio__content__cards__items:active .overlay {
+        opacity: 1;
+    }
+
+    .portfolio__content__cards__items:active img {
+        transform: scale(1.05); /* Maintain zoom effect on mobile click */
+    }
+    .overlay{
+        background-color: #ecf79e;
+        opacity: 0.4;
+    }
+    
+}
+@media only screen and (min-width: 481px) and (max-width:767px) {
+    .portfolio__content__filter li {
+        font-size: 14px;
+    }
+
+    .portfolio__content__cards {
+        grid-template-columns: repeat(2,2fr); /* 1 column on small screens */
+    }
+
+    .portfolio__content__cards__items {
+        height: 250px; /* Adjust height on small screens */
+    }
+
+    .typing-effect {
+        font-size: 1.2rem; /* Smaller font size for typing effect on small screens */
+    }
+
+    /* Additional styles to ensure hover-like behavior on mobile */
+    .portfolio__content__cards__items:active .overlay {
+        opacity: 1;
+    }
+
+    .portfolio__content__cards__items:active img {
+        transform: scale(1.05); /* Maintain zoom effect on mobile click */
+    }
+    .overlay{
+        background-color: #ecf79e;
+        opacity: 0.4;
+    }
+    
+}
+
